@@ -2,14 +2,11 @@ Package: credit
 Type: Package
 Title: Generate CRediT Author Statements
 Version: 0.1.0
-Author: Authors@R: 
+Authors@R: 
     c(
       person(given = "Josep", family = "Pueyo-Ros", email = "josep.pueyo@udg.edu", 
-      role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1236-5651")),
-      person(given = "ICRA - Catalan Institute for Water Research", 
-        role = "fnd", comment = c(project = "Edicitnet", grant_agreement = 776665))
-      )
-Description: credit is a Tiny package to generate CRediT author statements (https://credit.niso.org/). 
+      role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1236-5651")))
+Description: credit is a tiny package to generate CRediT author statements (https://credit.niso.org/). 
     It provides three functions: create a template, read it back and generate the CRediT author statement in a text file.
 License: MIT + file LICENSE
 Encoding: UTF-8

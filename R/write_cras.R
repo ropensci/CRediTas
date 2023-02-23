@@ -1,7 +1,7 @@
 #' Write CRediT author statement
 #' @param cras_table A data.frame created using \code{create_template()}
 #' @param file The text file to be created
-#' @param overwrite If TRUE, the file is overwriten. Otherwise, a error is triggered.
+#' @param overwrite If TRUE, the file is overwritten. Otherwise, a error is triggered.
 #' @param markdown If TRUE, the authors are surrounded by ** to make them bold in markdown.
 #' @return A text file with the CRedit authors statement
 #' @examples

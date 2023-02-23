@@ -11,7 +11,7 @@ write_cras(cras_table, file = "cras.txt", overwrite = FALSE, markdown = FALSE)
 
 \item{file}{The text file to be created}
 
-\item{overwrite}{If TRUE, the file is overwriten. Otherwise, a error is triggered.}
+\item{overwrite}{If TRUE, the file is overwritten. Otherwise, a error is triggered.}
 
 \item{markdown}{If TRUE, the authors are surrounded by ** to make them bold in markdown.}
 }
