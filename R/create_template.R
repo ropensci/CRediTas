@@ -1,10 +1,12 @@
 #' Create a template to fill the credit author statement
-#'
-#' @param authors A character vector with all the authors to be included in the statement
-#' @param roles A character vector with the roles to be included in the statement. If NULL, it uses all the roles
-#' defined in the CRediT author statement
+#' @param authors A character vector with all the authors to be included in the
+#' statement
+#' @param roles A character vector with the roles to be included in the
+#' statement. If NULL, it uses all the roles defined in the CRediT author
+#' statement
 #' @param file If a path is provided, the template is saved as a csv for excel
-#' @returns A dataframe with a row for each authors and a column for each role, filled with zeros.
+#' @returns A dataframe with a row for each authors and a column for each role,
+#' filled with zeros.
 #' @details The dataframe can be exported to a csv an edit it by hand.
 #' @examples
 #' create_template(authors = c("Josep Maria", "Jane Doe"))
