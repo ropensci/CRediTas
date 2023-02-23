@@ -34,7 +34,7 @@ write_cras <- function(cras_table,
 
   cras <- character()
 
-  for (i in 1:nrow(cras_table)){
+  for (i in seq_len(nrow(cras_table))){
 
     if (markdown) cras <- paste0(cras,"**")
     cras <- paste0(cras, cras_table$Authors[[i]], ":")
