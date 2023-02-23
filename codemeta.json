@@ -1,0 +1,56 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "credit",
+  "description": "credit is a tiny package to generate CRediT author statements (https://credit.niso.org/). It provides three functions: create a template, read it back and generate the CRediT author statement in a text file.",
+  "name": "credit: Generate CRediT Author Statements",
+  "codeRepository": "https://github.com/jospueyo/credit",
+  "issueTracker": "https://github.com/jospueyo/credit/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.1.0",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 4.2.1 (2022-06-23 ucrt)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Josep",
+      "familyName": "Pueyo-Ros",
+      "email": "josep.pueyo@udg.edu",
+      "@id": "https://orcid.org/0000-0002-1236-5651"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Josep",
+      "familyName": "Pueyo-Ros",
+      "email": "josep.pueyo@udg.edu",
+      "@id": "https://orcid.org/0000-0002-1236-5651"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 3.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    }
+  ],
+  "softwareRequirements": {
+    "SystemRequirements": null
+  },
+  "fileSize": "14.753KB",
+  "readme": "https://github.com/jospueyo/credit/blob/master/README.md",
+  "contIntegration": "https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml"
+}
