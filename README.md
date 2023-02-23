@@ -49,7 +49,6 @@ of who did what. If you wrote the template to a file, then you can read
 it back to R as follows:
 
 ``` r
-
 cras_table <- read_template(path_to_your_csv_file)
 ```
 
@@ -57,18 +56,18 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - Original Draft | Writing - Review & Editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        1 |          0 |               0 |             1 |         1 |             0 |                        1 |                          1 |             1 |           1 |                      1 |                   0 |
-| Pau Vidal de la Blache |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           1 |        1 |          0 |               0 |             1 |         1 |             1 |                        0 |                          0 |             0 |           1 |                      0 |                   0 |
+| Friedrich Ratzel       |                 0 |           1 |        1 |          0 |               0 |             0 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      1 |                   1 |
+| Pau Vidal de la Blache |                 1 |           0 |        0 |          0 |               1 |             0 |         1 |             1 |                        1 |                          1 |             0 |           0 |                      0 |                   0 |
+| Élisée Reclus          |                 0 |           1 |        1 |          0 |               1 |             1 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      0 |                   0 |
 
 A text file can be generated following the CRediT author statement
 format.
 
 ``` r
-
 textfile <- tempfile()
 
 write_cras(cras_table, textfile, markdown = TRUE)
-readLines(textfile)
-#> [1] "**Friedrich Ratzel:** Software, Investigation, Resources, Writing - Original Draft, Writing - Review & Editing, Visualization, Supervision, Project administration **Pau Vidal de la Blache:** Writing - Original Draft, Supervision **Élisée Reclus:** Methodology, Software, Investigation, Resources, Data curation, Supervision"
+cat(readLines(textfile))
 ```
+
+    ## **Friedrich Ratzel:** Methodology, Software, Resources, Writing - Review & Editing, Project administration, Funding acquisition **Pau Vidal de la Blache:** Conceptualization, Formal analysis, Resources, Data curation, Writing - Original Draft, Writing - Review & Editing **Élisée Reclus:** Methodology, Software, Formal analysis, Investigation, Writing - Original Draft, Supervision

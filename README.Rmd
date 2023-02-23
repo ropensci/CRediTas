@@ -6,8 +6,8 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
+  # collapse = TRUE,
+  # comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -65,7 +65,7 @@ A text file can be generated following the CRediT author statement format.
 textfile <- tempfile()
 
 write_cras(cras_table, textfile, markdown = TRUE)
-readLines(textfile)
+cat(readLines(textfile))
 
 ```
 
