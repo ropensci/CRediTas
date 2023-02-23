@@ -56,9 +56,9 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - Original Draft | Writing - Review & Editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           1 |        1 |          0 |               0 |             0 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      1 |                   1 |
-| Pau Vidal de la Blache |                 1 |           0 |        0 |          0 |               1 |             0 |         1 |             1 |                        1 |                          1 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           1 |        1 |          0 |               1 |             1 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      0 |                   0 |
+| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               1 |             0 |         0 |             0 |                        0 |                          0 |             1 |           0 |                      0 |                   0 |
+| Pau Vidal de la Blache |                 0 |           1 |        0 |          0 |               1 |             0 |         0 |             1 |                        0 |                          0 |             0 |           0 |                      1 |                   0 |
+| Élisée Reclus          |                 1 |           0 |        0 |          1 |               0 |             1 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      1 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format.
@@ -67,7 +67,11 @@ format.
 textfile <- tempfile()
 
 write_cras(cras_table, textfile, markdown = TRUE)
-cat(readLines(textfile))
 ```
 
-    ## **Friedrich Ratzel:** Methodology, Software, Resources, Writing - Review & Editing, Project administration, Funding acquisition **Pau Vidal de la Blache:** Conceptualization, Formal analysis, Resources, Data curation, Writing - Original Draft, Writing - Review & Editing **Élisée Reclus:** Methodology, Software, Formal analysis, Investigation, Writing - Original Draft, Supervision
+If you open the textfile, you will find this:
+
+**Friedrich Ratzel:** Formal analysis, Visualization **Pau Vidal de la
+Blache:** Methodology, Formal analysis, Data curation, Project
+administration **Élisée Reclus:** Conceptualization, Validation,
+Investigation, Project administration, Funding acquisition

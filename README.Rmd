@@ -65,7 +65,10 @@ A text file can be generated following the CRediT author statement format.
 textfile <- tempfile()
 
 write_cras(cras_table, textfile, markdown = TRUE)
-cat(readLines(textfile))
 
 ```
+
+If you open the textfile, you will find this:
+
+`r readLines(textfile)`
 
