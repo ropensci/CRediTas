@@ -4,19 +4,30 @@
 \alias{write_cras}
 \title{Write CRediT author statement}
 \usage{
-write_cras(cras_table, file = "cras.txt", overwrite = FALSE, markdown = FALSE)
+write_cras(
+  cras_table,
+  file = "cras.txt",
+  overwrite = FALSE,
+  markdown = FALSE,
+  quiet = FALSE
+)
 }
 \arguments{
 \item{cras_table}{A data.frame created using \code{create_template()}}
 
 \item{file}{The text file to be created}
 
-\item{overwrite}{If TRUE, the file is overwritten. Otherwise, a error is triggered.}
+\item{overwrite}{If TRUE, the file is overwritten. Otherwise, a error is
+triggered.}
 
-\item{markdown}{If TRUE, the authors are surrounded by ** to make them bold in markdown.}
+\item{markdown}{If TRUE, the authors are surrounded by ** to make them bold
+in markdown.}
+
+\item{quiet}{If TRUE, authors without contributions are silently dropped out.
+If FALSE, a warning is triggered in case any authors is dropped out.}
 }
 \value{
-A text file with the CRedit authors statement
+A text file with the CRediT authors statement
 }
 \description{
 Write CRediT author statement
@@ -24,7 +35,8 @@ Write CRediT author statement
 \examples{
 # Generate a template and populate it (randomwly for this example)
 cras_table <- create_template(authors = c("Josep Maria", "Jane Doe"))
-cras_table[,2:ncol(cras_table)] <- sample(0:1, (ncol(cras_table)-1)*2, replace = TRUE)
+cras_table[,2:ncol(cras_table)] <- sample(0:1, (ncol(cras_table)-1)*2,
+                                          replace = TRUE)
 
 # Create a temporary file just for this example
 file <- tempfile()

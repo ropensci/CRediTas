@@ -7,21 +7,24 @@
 create_template(authors, roles = NULL, file = NULL)
 }
 \arguments{
-\item{authors}{A character vector with all the authors to be included in the statement}
+\item{authors}{A character vector with all the authors to be included in the
+statement}
 
-\item{roles}{A character vector with the roles to be included in the statement. If NULL, it uses all the roles
-defined in the CRediT author statement}
+\item{roles}{A character vector with the roles to be included in the
+statement. If NULL, it uses all the roles defined in the CRediT author
+statement}
 
 \item{file}{If a path is provided, the template is saved as a csv for excel}
 }
 \value{
-A dataframe with a row for each authors and a column for each role, filled with zeros.
+A dataframe with a row for each authors and a column for each role,
+filled with zeros.
 }
 \description{
 Create a template to fill the credit author statement
 }
 \details{
-The dataframe can be exported to a csv an edit it by hand.
+The dataframe can be exported to a csv to be edited manually.
 }
 \examples{
 create_template(authors = c("Josep Maria", "Jane Doe"))

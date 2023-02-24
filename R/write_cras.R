@@ -5,7 +5,9 @@
 #' triggered.
 #' @param markdown If TRUE, the authors are surrounded by ** to make them bold
 #' in markdown.
-#' @return A text file with the CRedit authors statement
+#' @param quiet If TRUE, authors without contributions are silently dropped out.
+#' If FALSE, a warning is triggered in case any authors is dropped out.
+#' @return A text file with the CRediT authors statement
 #' @examples
 #' # Generate a template and populate it (randomwly for this example)
 #' cras_table <- create_template(authors = c("Josep Maria", "Jane Doe"))
@@ -26,11 +28,10 @@
 write_cras <- function(cras_table,
                        file = "cras.txt",
                        overwrite = FALSE,
-                       markdown = FALSE){
+                       markdown = FALSE,
+                       quiet = FALSE){
 
-  stopifnot(inherits(cras_table, "data.frame"))
-  stopifnot(nrow(cras_table) > 0)
-  stopifnot(ncol(cras_table) > 1)
+  cras_table <- drop_authors(cras_table, quiet = quiet)
 
   cras <- character()
 

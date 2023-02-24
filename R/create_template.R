@@ -7,7 +7,7 @@
 #' @param file If a path is provided, the template is saved as a csv for excel
 #' @returns A dataframe with a row for each authors and a column for each role,
 #' filled with zeros.
-#' @details The dataframe can be exported to a csv an edit it by hand.
+#' @details The dataframe can be exported to a csv to be edited manually.
 #' @examples
 #' create_template(authors = c("Josep Maria", "Jane Doe"))
 #' @export

@@ -15,5 +15,5 @@
 #' @importFrom utils write.csv2 read.csv2
 
 read_template <- function(file){
-  read.csv2(file)
+  cras_table <- read.csv2(file)
 }
