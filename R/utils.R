@@ -13,8 +13,9 @@ drop_authors <- function(cras_table, quiet = FALSE){
 
   check_cras_table(cras_table)
 
-  drop_rows <- sapply(seq_len(nrow(cras_table)),
-                      function(i) any(cras_table[i,-1] != 0))
+  drop_rows <- vapply(seq_len(nrow(cras_table)),
+                      function(i) any(cras_table[i,-1] != 0),
+                      FUN.VALUE = logical(1))
 
   if(all(!drop_rows)) stop("No authors have contributions")
 
