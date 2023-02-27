@@ -17,10 +17,6 @@ knitr::opts_chunk$set(
 
 # credit
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-
 The goal of credit is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications.
 
 ## Installation
@@ -74,6 +70,6 @@ write_cras(cras_table, textfile, markdown = TRUE)
 
 ```
 
-If you open the textfile, you will find this:
+If you open the text file, you will find this:
 
 `r readLines(textfile)`

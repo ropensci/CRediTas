@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of credit is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications.
+The goal of credit is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications. Normally, the first author of a scientific paper organizes a table in a spreadsheet where all the authors self-state their contributions. Often too, it is the first author responsibility to state the contributions of all co-authors. However, at the end, the information has to be translated to the CRediT statement format of "Author 1: roles Authors 2: roles ..." which is prone to errors and tedious, especially if there are many co-authors. The credit package aims to make this easier by providing a template to be filled in form of a table (csv) and then converting this table to CRediT statement format.  
 
 ## Installation
 
@@ -68,7 +68,7 @@ write_cras(cras_table, textfile, markdown = TRUE)
 
 ```
 
-If you open the textfile, you will find this:
+If you open the text file, you will find this:
 
 `r readLines(textfile)`
 
