@@ -26,9 +26,25 @@ You can install the development version of credit from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("jospueyo/credit")
+# install.packages("remotes")
+remotes::install_github("jospueyo/credit")
 ```
+
+    ## Downloading GitHub repo jospueyo/credit@HEAD
+
+    ## ── R CMD build ─────────────────────────────────────────────────────────────────
+    ##          checking for file 'C:\Users\jpueyo\AppData\Local\Temp\RtmpagF8Kt\remotes3db02bf65435\jospueyo-credit-f4052dc/DESCRIPTION' ...     checking for file 'C:\Users\jpueyo\AppData\Local\Temp\RtmpagF8Kt\remotes3db02bf65435\jospueyo-credit-f4052dc/DESCRIPTION' ...   ✔  checking for file 'C:\Users\jpueyo\AppData\Local\Temp\RtmpagF8Kt\remotes3db02bf65435\jospueyo-credit-f4052dc/DESCRIPTION'
+    ##       ─  preparing 'credit':
+    ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   ✔  checking DESCRIPTION meta-information
+    ##       ─  checking for LF line-endings in source and make files and shell scripts
+    ##       ─  checking for empty or unneeded directories
+    ##      Omitted 'LazyData' from DESCRIPTION
+    ##       ─  building 'credit_0.1.0.tar.gz'
+    ##      
+    ## 
+
+    ## Installing package into 'C:/Users/jpueyo/AppData/Local/Temp/RtmpE9B72w/temp_libpath1d184c313782'
+    ## (as 'lib' is unspecified)
 
 ## Example
 
@@ -64,9 +80,9 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - Original Draft | Writing - Review & Editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           1 |        1 |          1 |               1 |             0 |         1 |             1 |                        0 |                          0 |             1 |           0 |                      1 |                   1 |
-| Pau Vidal de la Blache |                 0 |           0 |        1 |          0 |               0 |             0 |         1 |             1 |                        1 |                          1 |             0 |           1 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           1 |        0 |          0 |               1 |             0 |         0 |             0 |                        0 |                          1 |             1 |           1 |                      1 |                   0 |
+| Friedrich Ratzel       |                 0 |           0 |        0 |          1 |               1 |             0 |         0 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   0 |
+| Pau Vidal de la Blache |                 1 |           0 |        0 |          0 |               0 |             0 |         0 |             1 |                        0 |                          1 |             0 |           0 |                      0 |                   1 |
+| Élisée Reclus          |                 0 |           0 |        0 |          0 |               0 |             1 |         1 |             0 |                        0 |                          1 |             1 |           1 |                      1 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format.
@@ -79,10 +95,9 @@ write_cras(cras_table, textfile, markdown = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Methodology, Software, Validation, Formal
-analysis, Resources, Data curation, Visualization, Project
-administration, Funding acquisition **Pau Vidal de la Blache:**
-Software, Resources, Data curation, Writing - Original Draft, Writing -
-Review & Editing, Supervision **Élisée Reclus:** Methodology, Formal
-analysis, Writing - Review & Editing, Visualization, Supervision,
-Project administration
+**Friedrich Ratzel:** Validation, Formal analysis, Visualization,
+Supervision, Project administration **Pau Vidal de la Blache:**
+Conceptualization, Data curation, Writing - Review & Editing, Funding
+acquisition **Élisée Reclus:** Investigation, Resources, Writing -
+Review & Editing, Visualization, Supervision, Project administration,
+Funding acquisition

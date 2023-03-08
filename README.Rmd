@@ -25,9 +25,9 @@ The goal of credit is to facilitate the tedious job of creating [CRediT authors 
 
 You can install the development version of credit from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("jospueyo/credit")
+``` {r}
+# install.packages("remotes")
+remotes::install_github("jospueyo/credit")
 ```
 
 ## Example

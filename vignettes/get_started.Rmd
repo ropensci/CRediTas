@@ -24,19 +24,16 @@ The goal of credit is to facilitate the tedious job of creating [CRediT authors 
 You can install the development version of credit from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("jospueyo/credit")
+# install.packages("remotes")
+remotes::install_github("jospueyo/credit")
 ```
 
 ## Example
 
-The workflow is meant to work with three basic functions. First, we create a template table. It can be created as a `data.frame` and being populated in R. Or as a csv file and being populated in your preferred csv editor.
+The workflow is meant to work with three basic functions. First, we create a template table. It can be created as a `data.frame` and being populated in R. 
 
 ```{r create_template}
 library(credit)
-
-create_template(authors = c("Alexander Humboldt", "Carl Ritter"), 
-                file = tempfile())
 
 cras_table <- create_template(authors = c("Friedrich Ratzel", 
                                           "Pau Vidal de la Blache", 
@@ -44,13 +41,35 @@ cras_table <- create_template(authors = c("Friedrich Ratzel",
 knitr::kable(cras_table)
 
 ```
-As you can see, the table is empty. So you must provide the information of who did what. If you wrote the template to a file, then you can read it back to R as follows:
+As you can see, the table is empty. So you must provide the information of who did what. To do this, you can also write the template as a csv file and then populate it in your preferred csv editor.
+
+```{r write_csv, eval=FALSE}
+
+create_template(authors = c("Friedrich Ratzel", 
+                                          "Pau Vidal de la Blache", 
+                                          "Élisée Reclus"),
+                            file = path_to_your_csv_file)
+
+```
+
+Additionally, you can also define the roles to be included in the template. If `roles` is no specified, the roles recommended by the CRediT system are all included:
+
+```{r define_roles}
+
+create_template(authors = c("Danaerys Targaryen", "John Snow"),
+                roles = c("Free slaves", "Kill white walkers", "Ride dragons")) |> 
+                  knitr::kable()
+
+```
+
+If you wrote the template to a file, then you can read it back to R as follows:
 
 ```{r read_template, eval=FALSE}
 
 cras_table <- read_template(path_to_your_csv_file)
 
 ```
+
 Once the `cras_table` is populated, for instance:
 
 ```{r populate_random, echo=FALSE}
@@ -60,6 +79,7 @@ cras_table[, 2:ncol(cras_table)] <- sample(0:1, size=3*14,
 knitr::kable(cras_table)
 
 ```
+
 A text file can be generated following the CRediT author statement format.
 
 ```{r}

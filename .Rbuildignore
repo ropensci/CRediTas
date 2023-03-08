@@ -6,3 +6,6 @@
 ^\.github$
 ^revdep$
 ^codemeta
+^doc$
+^Meta$
+^docs$

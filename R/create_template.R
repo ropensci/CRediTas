@@ -43,6 +43,7 @@ create_template <- function(authors, roles = NULL, file = NULL){
   if (is.null(file)) return(df)
 
   write.csv2(df, file, row.names = FALSE)
+  invisible()
 }
 
 
