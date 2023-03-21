@@ -94,3 +94,6 @@ write_cras(cras_table, textfile, markdown = TRUE)
 If you open the text file, you will find this:
 
 `r readLines(textfile)`
+
+Moreover, if you are writing your paper in RMarkdown or quarto, you can insert the CRediT author statement directly in the text using an inline chunk ``markdown `r write_cras(cras_table, file = NULL, markdown = TRUE)` ``. 
+

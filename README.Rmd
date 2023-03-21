@@ -71,5 +71,5 @@ write_cras(cras_table, textfile, markdown = TRUE)
 
 If you open the text file, you will find this:
 
-`r readLines(textfile)`
+`r write_cras(cras_table, markdown = TRUE)`
 

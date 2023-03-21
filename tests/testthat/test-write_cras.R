@@ -22,6 +22,10 @@ test_that("write_cras works as expected in markdown text", {
   expect_equal(readLines(file), cras_md)
 })
 
+test_that("write_cras returns vector when file is null",{
+  expect_equal(write_cras(cras_table, file = NULL, quiet = TRUE), cras)
+})
+
 test_that("do not overwrite the file", {
   file <- tempfile()
   write_cras(cras_table, file, quiet = TRUE)
@@ -40,4 +44,12 @@ test_that("raise warning when authors are dropped", {
 
 test_that("raise error if all authors are dropped", {
   expect_error(write_cras(create_template(c("a", "b")), tempfile()))
+})
+
+test_that("raise error if file is not NULL or string", {
+  expect_error(write_cras(cras_table, file = 1223, quiet = TRUE))
+})
+
+test_that("raise error if file length is gt 1", {
+  expect_error(write_cras(cras_table, file = c("a", "b"), quiet = TRUE))
 })

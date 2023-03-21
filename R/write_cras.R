@@ -26,7 +26,7 @@
 
 
 write_cras <- function(cras_table,
-                       file = "cras.txt",
+                       file = NULL,
                        overwrite = FALSE,
                        markdown = FALSE,
                        quiet = FALSE){
@@ -54,6 +54,13 @@ write_cras <- function(cras_table,
   }
 
   cras <- gsub(" $", "", cras)
+
+  if(is.null(file)){
+    return(cras)
+  }
+
+  if(!is.character(file)) stop("file must be NULL or a string")
+  if(length(file) > 1) stop("file cannot be a vector of length > 1")
 
   if(file.exists(file) && isFALSE(overwrite)) stop("The file already exists")
 
