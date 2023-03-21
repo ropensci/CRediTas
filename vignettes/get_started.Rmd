@@ -41,6 +41,7 @@ cras_table <- create_template(authors = c("Friedrich Ratzel",
 knitr::kable(cras_table)
 
 ```
+
 As you can see, the table is empty. So you must provide the information of who did what. To do this, you can also write the template as a csv file and then populate it in your preferred csv editor.
 
 ```{r write_csv, eval=FALSE}
