@@ -6,7 +6,7 @@
 \usage{
 write_cras(
   cras_table,
-  file = "cras.txt",
+  file = NULL,
   overwrite = FALSE,
   markdown = FALSE,
   quiet = FALSE
@@ -15,7 +15,8 @@ write_cras(
 \arguments{
 \item{cras_table}{A data.frame created using \code{create_template()}}
 
-\item{file}{The text file to be created}
+\item{file}{The text file to be created. If NULL (default), the statement is returned as a string instead
+of written to a file.}
 
 \item{overwrite}{If TRUE, the file is overwritten. Otherwise, a error is
 triggered.}
