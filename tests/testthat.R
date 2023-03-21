@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(credit)
+library(CRediTas)
 
-test_check("credit")
+test_check("CRediTas")

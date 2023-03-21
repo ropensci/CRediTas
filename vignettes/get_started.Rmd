@@ -15,17 +15,17 @@ knitr::opts_chunk$set(
 )
 ```
 
-# credit
+# CRediTas
 
-The goal of credit is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications.
+The goal of CRediTas is to facilitate the tedious job of creating [CRediT authors statements](https://CRediTas.niso.org/) for scientific publications.
 
 ## Installation
 
-You can install the development version of credit from [GitHub](https://github.com/) with:
+You can install the development version of CRediTas from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("jospueyo/credit")
+remotes::install_github("jospueyo/CRediTas")
 ```
 
 ## Example
@@ -33,7 +33,7 @@ remotes::install_github("jospueyo/credit")
 The workflow is meant to work with three basic functions. First, we create a template table. It can be created as a `data.frame` and being populated in R. 
 
 ```{r create_template}
-library(credit)
+library(CRediTas)
 
 cras_table <- create_template(authors = c("Friedrich Ratzel", 
                                           "Pau Vidal de la Blache", 

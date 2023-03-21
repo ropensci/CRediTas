@@ -13,22 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# credit
+# CRediTas
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/credit/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml)
 [![Status at rOpenSci Software Peer Review](https://badges.ropensci.org/576_status.svg)](https://github.com/ropensci/software-review/issues/576)
 <!-- badges: end -->
 
-The goal of credit is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications. Normally, the first author of a scientific paper organizes a table in a spreadsheet where all the authors self-state their contributions. Often too, it is the first author responsibility to state the contributions of all co-authors. However, at the end, the information has to be translated to the CRediT statement format of "Author 1: roles Authors 2: roles ..." which is prone to errors and tedious, especially if there are many co-authors. The credit package aims to make this easier by providing a template to be filled in form of a table (csv) and then converting this table to CRediT statement format.  
+The goal of CRediTas is to facilitate the tedious job of creating [CRediT authors statements](https://credit.niso.org/) for scientific publications. Normally, the first author of a scientific paper organizes a table in a spreadsheet where all the authors self-state their contributions. Often too, it is the first author responsibility to state the contributions of all co-authors. However, at the end, the information has to be translated to the CRediT statement format of "Author 1: roles Authors 2: roles ..." which is prone to errors and tedious, especially if there are many co-authors. The CRediTas package aims to make this easier by providing a template to be filled in form of a table (csv) and then converting this table to CRediT statement format.  
 
 ## Installation
 
-You can install the development version of credit from [GitHub](https://github.com/) with:
+You can install the development version of CRediTas from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("jospueyo/credit")
+remotes::install_github("jospueyo/CRediTas")
 ```
 
 ## Example
@@ -36,7 +36,7 @@ remotes::install_github("jospueyo/credit")
 The workflow is meant to work with three basic functions. First, we create a template table. It can be created as a `data.frame` and being populated in R. Or as a csv file and being populated in your preferred csv editor.
 
 ```{r create_template}
-library(credit)
+library(CRediTas)
 
 create_template(authors = c("Alexander Humboldt", "Carl Ritter"), file = tempfile())
 

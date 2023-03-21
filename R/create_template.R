@@ -1,4 +1,4 @@
-#' Create a template to fill the credit author statement
+#' Create a template to fill the CRediTas author statement
 #' @param authors A character vector with all the authors to be included in the
 #' statement
 #' @param roles A character vector with the roles to be included in the

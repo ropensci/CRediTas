@@ -1,2 +1,2 @@
-# credit 0.1.0
+# CRediTas 0.1.0
 
