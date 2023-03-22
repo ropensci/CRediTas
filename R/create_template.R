@@ -16,22 +16,7 @@
 create_template <- function(authors, roles = NULL, file = NULL){
 
   if (is.null(roles)){
-    roles <- c(
-      "Conceptualization",
-      "Methodology",
-      "Software",
-      "Validation",
-      "Formal analysis",
-      "Investigation",
-      "Resources",
-      "Data curation",
-      "Writing - Original Draft",
-      "Writing - Review & Editing",
-      "Visualization",
-      "Supervision",
-      "Project administration",
-      "Funding acquisition"
-    )
+    roles <- roles_get()
   }
 
   n_authors <- length(authors)

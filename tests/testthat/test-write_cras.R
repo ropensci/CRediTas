@@ -1,12 +1,16 @@
 cras_table <- create_template(authors = c("ABC", "DEF", "HIJ", "KLM"))
 cras_table$Conceptualization <- c(1,0,0,0)
-cras_table$Methodology <- c(0,1,1,0)
-cras_table$Resources <- c(0,0,1,0)
-cras_table$`Writing - Original Draft` <- c(1,0,0,0)
-cras_table$`Writing - Review & Editing` <- c(0,1,1,0)
-cras_table$`Funding acquisition` <- c(0,0,1,0)
+cras_table$Methodology <- c(0,1,0,1)
+cras_table$Resources <- c(0,0,0,1)
+cras_table$`Writing - original draft` <- c(1,0,0,0)
+cras_table$`Writing - review & editing` <- c(0,1,0,1)
+cras_table$`Funding acquisition` <- c(0,0,0,1)
 
-cras <- "ABC: Conceptualization, Writing - Original Draft DEF: Methodology, Writing - Review & Editing HIJ: Methodology, Resources, Writing - Review & Editing, Funding acquisition"
+cras <- paste0("ABC: ", roles_get()[[1]], ", ", roles_get()[[9]], " ",
+              "DEF: ", roles_get()[[2]], ", ", roles_get()[[10]], " ",
+              "KLM: ", roles_get()[[2]], ", ", roles_get()[[7]], ", ",
+                       roles_get()[[10]], ", ", roles_get()[[14]]
+        )
 
 test_that("write_cras works as expected in raw text", {
   file <- tempfile()
@@ -14,7 +18,9 @@ test_that("write_cras works as expected in raw text", {
   expect_equal(readLines(file), cras)
 })
 
-cras_md <- "**ABC:** Conceptualization, Writing - Original Draft **DEF:** Methodology, Writing - Review & Editing **HIJ:** Methodology, Resources, Writing - Review & Editing, Funding acquisition"
+cras_md <- sub("ABC:", "**ABC:**", cras)
+cras_md <- sub("DEF:", "**DEF:**", cras_md)
+cras_md <- sub("KLM:", "**KLM:**", cras_md)
 
 test_that("write_cras works as expected in markdown text", {
   file <- tempfile()

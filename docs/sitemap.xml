@@ -37,6 +37,9 @@
     <loc>/reference/read_template.html</loc>
   </url>
   <url>
+    <loc>/reference/roles_get.html</loc>
+  </url>
+  <url>
     <loc>/reference/write_cras.html</loc>
   </url>
 </urlset>
