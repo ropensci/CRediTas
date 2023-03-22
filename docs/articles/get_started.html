@@ -279,53 +279,53 @@ as follows:</p>
 <tr class="odd">
 <td align="left">Friedrich Ratzel</td>
 <td align="right">0</td>
-<td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">Pau Vidal de la Blache</td>
+<td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">Élisée Reclus</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
@@ -337,17 +337,16 @@ format.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/write_cras.html">write_cras</a></span><span class="op">(</span><span class="va">cras_table</span>, <span class="va">textfile</span>, markdown <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>If you open the text file, you will find this:</p>
-<p><strong>Friedrich Ratzel:</strong> Software, Validation, Formal
-analysis, Investigation, Visualization, Funding acquisition <strong>Pau
-Vidal de la Blache:</strong> Conceptualization, Methodology, Validation,
-Investigation, Writing - Original Draft, Visualization, Supervision
-<strong>Élisée Reclus:</strong> Software, Writing - Original Draft,
-Visualization, Supervision, Project administration, Funding
-acquisition</p>
+<p><strong>Friedrich Ratzel:</strong> Methodology, Software, Formal
+analysis, Writing - Review &amp; Editing, Project administration
+<strong>Pau Vidal de la Blache:</strong> Methodology, Software,
+Validation, Formal analysis, Investigation, Visualization, Project
+administration <strong>Élisée Reclus:</strong> Validation, Formal
+analysis, Supervision, Project administration</p>
 <p>Moreover, if you are writing your paper in RMarkdown or quarto, you
 can insert the CRediT author statement directly in the text using an
 inline chunk
-<code>markdown **Friedrich Ratzel:** Software, Validation, Formal analysis, Investigation, Visualization, Funding acquisition **Pau Vidal de la Blache:** Conceptualization, Methodology, Validation, Investigation, Writing - Original Draft, Visualization, Supervision **Élisée Reclus:** Software, Writing - Original Draft, Visualization, Supervision, Project administration, Funding acquisition</code>.</p>
+<code>`r write_cras(cras_table, file = NULL, markdown = TRUE)`</code>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

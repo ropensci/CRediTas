@@ -96,7 +96,11 @@ If FALSE, a warning is triggered in case any authors is dropped out.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A text file with the CRediT authors statement</p>
+<p>A text file with the CRediT authors statement or, if file is NULL
+(default), a string with the statement that can be used in a Rmarkdown or
+quarto document using inline code: <code>`r write_cras(cras_table, markdown = TRUE)`</code></p>
+
+
     </div>
 
     <div class="section level2">
@@ -114,7 +118,7 @@ If FALSE, a warning is triggered in case any authors is dropped out.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Check the content of the file</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "**Josep Maria:** Software, Writing - Original Draft **Jane Doe:** Software, Formal analysis, Data curation, Writing - Original Draft, Writing - Review &amp; Editing"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "**Josep Maria:** Methodology, Software, Validation, Data curation, Visualization **Jane Doe:** Formal analysis, Investigation, Resources, Data curation, Writing - Original Draft, Supervision, Project administration, Funding acquisition"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
