@@ -1,6 +1,7 @@
 #' Write CRediT author statement
 #' @param cras_table A data.frame created using \code{create_template()}
-#' @param file The text file to be created
+#' @param file The text file to be created. If NULL (default), the statement is returned as a string instead
+#' of written to a file.
 #' @param overwrite If TRUE, the file is overwritten. Otherwise, a error is
 #' triggered.
 #' @param markdown If TRUE, the authors are surrounded by ** to make them bold
