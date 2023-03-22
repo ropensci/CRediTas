@@ -28,6 +28,9 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/cras_write.html</loc>
+  </url>
+  <url>
     <loc>/reference/create_template.html</loc>
   </url>
   <url>
@@ -38,6 +41,12 @@
   </url>
   <url>
     <loc>/reference/roles_get.html</loc>
+  </url>
+  <url>
+    <loc>/reference/template_create.html</loc>
+  </url>
+  <url>
+    <loc>/reference/template_read.html</loc>
   </url>
   <url>
     <loc>/reference/write_cras.html</loc>

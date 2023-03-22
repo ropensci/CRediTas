@@ -9,11 +9,11 @@
 #' filled with zeros.
 #' @details The dataframe can be exported to a csv to be edited manually.
 #' @examples
-#' create_template(authors = c("Josep Maria", "Jane Doe"))
+#' template_create(authors = c("Josep Maria", "Jane Doe"))
 #' @export
 
 
-create_template <- function(authors, roles = NULL, file = NULL){
+template_create <- function(authors, roles = NULL, file = NULL){
 
   if (is.null(roles)){
     roles <- roles_get()

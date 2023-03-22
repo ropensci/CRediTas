@@ -7,13 +7,13 @@
 #' file <- tempfile()
 #'
 #' # Create a template and save it to a csv file
-#' create_template(authors = c("Josep Maria", "Jane Doe"), file = file)
+#' template_create(authors = c("Josep Maria", "Jane Doe"), file = file)
 #'
 #' # Read the template back (in real life once it has been populated)
-#' read_template(file)
+#' template_read(file)
 #' @export
 #' @importFrom utils write.csv2 read.csv2
 
-read_template <- function(file){
+template_read <- function(file){
   cras_table <- read.csv2(file, check.names = FALSE)
 }

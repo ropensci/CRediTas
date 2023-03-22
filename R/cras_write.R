@@ -10,10 +10,10 @@
 #' If FALSE, a warning is triggered in case any authors is dropped out.
 #' @return A text file with the CRediT authors statement or, if file is NULL
 #' (default), a string with the statement that can be used in a Rmarkdown or
-#' quarto document using inline code: \code{`r write_cras(cras_table, markdown = TRUE)`}
+#' quarto document using inline code: \code{`r cras_write(cras_table, markdown = TRUE)`}
 #' @examples
 #' # Generate a template and populate it (randomwly for this example)
-#' cras_table <- create_template(authors = c("Josep Maria", "Jane Doe"))
+#' cras_table <- template_create(authors = c("Josep Maria", "Jane Doe"))
 #' cras_table[,2:ncol(cras_table)] <- sample(0:1, (ncol(cras_table)-1)*2,
 #'                                           replace = TRUE)
 #'
@@ -21,14 +21,14 @@
 #' file <- tempfile()
 #'
 #' # Write to the file
-#' write_cras(cras_table, file, markdown = TRUE)
+#' cras_write(cras_table, file, markdown = TRUE)
 #'
 #' # Check the content of the file
 #' readLines(file)
 #' @export
 
 
-write_cras <- function(cras_table,
+cras_write <- function(cras_table,
                        file = NULL,
                        overwrite = FALSE,
                        markdown = FALSE,

@@ -26,3 +26,4 @@ test_that("roles_get is updated with CRediT roles", {
   expect_equal(sort(roles), sort(roles_get()))
 
 })
+
