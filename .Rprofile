@@ -1,2 +1,2 @@
-library(usethis)
-library(devtools)
+suppressWarnings(require(usethis))
+suppressWarnings(require(devtools))
