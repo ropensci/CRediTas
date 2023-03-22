@@ -7,7 +7,9 @@
 #' in markdown.
 #' @param quiet If TRUE, authors without contributions are silently dropped out.
 #' If FALSE, a warning is triggered in case any authors is dropped out.
-#' @return A text file with the CRediT authors statement
+#' @return A text file with the CRediT authors statement or, if file is NULL
+#' (default), a string with the statement that can be used in a Rmarkdown or
+#' quarto document using inline code `r write_cras(cras_table, markdown = TRUE)`
 #' @examples
 #' # Generate a template and populate it (randomwly for this example)
 #' cras_table <- create_template(authors = c("Josep Maria", "Jane Doe"))

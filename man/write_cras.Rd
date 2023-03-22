@@ -6,7 +6,7 @@
 \usage{
 write_cras(
   cras_table,
-  file = "cras.txt",
+  file = NULL,
   overwrite = FALSE,
   markdown = FALSE,
   quiet = FALSE
@@ -27,7 +27,9 @@ in markdown.}
 If FALSE, a warning is triggered in case any authors is dropped out.}
 }
 \value{
-A text file with the CRediT authors statement
+A text file with the CRediT authors statement or, if file is NULL
+(default), a string with the statement that can be used in a Rmarkdown or
+quarto document using inline code `r write_cras(cras_table, markdown = TRUE)`
 }
 \description{
 Write CRediT author statement

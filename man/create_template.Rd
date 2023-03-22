@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_template.R
 \name{create_template}
 \alias{create_template}
-\title{Create a template to fill the credit author statement}
+\title{Create a template to fill the CRediTas author statement}
 \usage{
 create_template(authors, roles = NULL, file = NULL)
 }
@@ -21,7 +21,7 @@ A dataframe with a row for each authors and a column for each role,
 filled with zeros.
 }
 \description{
-Create a template to fill the credit author statement
+Create a template to fill the CRediTas author statement
 }
 \details{
 The dataframe can be exported to a csv to be edited manually.
