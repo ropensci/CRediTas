@@ -1,7 +1,7 @@
 Package: CRediTas
 Type: Package
 Title: Generate CRediT Author Statements
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     c(
       person(given = "Josep", family = "Pueyo-Ros", email = "josep.pueyo@udg.edu", 
