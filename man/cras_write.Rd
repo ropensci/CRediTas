@@ -7,33 +7,42 @@
 cras_write(
   cras_table,
   file = NULL,
+  drop_authors = TRUE,
   overwrite = FALSE,
-  markdown = FALSE,
+  markdown = TRUE,
   quiet = FALSE
 )
 }
 \arguments{
 \item{cras_table}{A data.frame created using \code{create_template()}}
 
-\item{file}{The text file to be created. If NULL (default), the statement is returned as a string instead
-of written to a file.}
+\item{file}{The text file to be created. If NULL (default), the statement is
+returned as a string instead of written to a file.}
+
+\item{drop_authors}{If TRUE (default) the authors without contributions are
+removed from the statement. If FALSE, they are kept without contributions
+assigned.}
 
 \item{overwrite}{If TRUE, the file is overwritten. Otherwise, a error is
 triggered.}
 
-\item{markdown}{If TRUE, the authors are surrounded by ** to make them bold
-in markdown.}
+\item{markdown}{If TRUE (default), the authors are surrounded by ** to make
+them bold in markdown.}
 
-\item{quiet}{If TRUE, authors without contributions are silently dropped out.
+\item{quiet}{If TRUE and \code{drop_authors} is also TRUE, authors without
+contributions are silently dropped out.
 If FALSE, a warning is triggered in case any authors is dropped out.}
 }
 \value{
 A text file with the CRediT authors statement or, if file is NULL
-(default), a string with the statement that can be used in a Rmarkdown or
-quarto document using inline code: \code{`r cras_write(cras_table, markdown = TRUE)`}
+(default), a character vector of length 1 with the statement that can be
+used in a Rmarkdown or quarto document using inline code:
+\code{`r cras_write(cras_table, markdown = TRUE)`}
 }
 \description{
-Write CRediT author statement
+The function transforms the information in the template
+(from \code{template_create}) to a raw string following the CRediT authors
+statement format of "author1: contributions author2: contributions ..."
 }
 \examples{
 # Generate a template and populate it (randomwly for this example)

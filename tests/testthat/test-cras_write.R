@@ -28,8 +28,12 @@ test_that("cras_write works as expected in markdown text", {
   expect_equal(readLines(file), cras_md)
 })
 
+test_that("authors are not dropped when drop_authors is false", {
+  expect_gt(grep("HIJ", cras_write(cras_table, drop_authors = FALSE)), 0)
+})
+
 test_that("cras_write returns vector when file is null",{
-  expect_equal(cras_write(cras_table, file = NULL, quiet = TRUE), cras)
+  expect_equal(cras_write(cras_table, file = NULL, quiet = TRUE,), cras_md)
 })
 
 test_that("do not overwrite the file", {

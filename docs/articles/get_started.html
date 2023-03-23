@@ -94,7 +94,7 @@ scientific publications.</p>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jospueyo/CRediTas"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h3 id="create-a-template">Create a template<a class="anchor" aria-label="anchor" href="#create-a-template"></a>
 </h3>
 <p>The workflow is meant to work with three basic functions. First, we
 create a template table. It can be created as a <code>data.frame</code>
@@ -209,9 +209,13 @@ template. If <code>roles</code> is no specified, the roles recommended
 by the CRediT system are all included:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="../reference/template_create.html">template_create</a></span><span class="op">(</span>authors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Danaerys Targaryen"</span>, <span class="st">"John Snow"</span><span class="op">)</span>,</span>
-<span>                roles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Free slaves"</span>, <span class="st">"Kill white walkers"</span>, <span class="st">"Ride dragons"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>                  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">cras_got</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/template_create.html">template_create</a></span><span class="op">(</span>authors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Danaerys Targaryen"</span>, <span class="st">"Kingslayer"</span>, <span class="st">"John Snow"</span><span class="op">)</span>,</span>
+<span>                roles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Free slaves"</span>, <span class="st">"Kill white walkers"</span>, <span class="st">"Ride dragons"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># add contribution roles</span></span>
+<span><span class="va">cras_got</span><span class="op">[</span><span class="op">-</span><span class="fl">2</span>, <span class="op">-</span><span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span></span>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">cras_got</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Authors</th>
@@ -222,23 +226,37 @@ by the CRediT system are all included:</p>
 <tbody>
 <tr class="odd">
 <td align="left">Danaerys Targaryen</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Kingslayer</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">John Snow</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section level3">
+<h3 id="read-a-template">Read a template<a class="anchor" aria-label="anchor" href="#read-a-template"></a>
+</h3>
 <p>If you wrote the template to a file, then you can read it back to R
 as follows:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">cras_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/template_read.html">template_read</a></span><span class="op">(</span><span class="va">path_to_your_csv_file</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="generate-the-credit-author-statement">Generate the CRediT author statement<a class="anchor" aria-label="anchor" href="#generate-the-credit-author-statement"></a>
+</h3>
 <p>Once the <code>cras_table</code> is populated, for instance:</p>
 <table class="table">
 <colgroup>
@@ -278,49 +296,49 @@ as follows:</p>
 <tbody>
 <tr class="odd">
 <td align="left">Friedrich Ratzel</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">Pau Vidal de la Blache</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">Élisée Reclus</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
 <td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -337,16 +355,31 @@ format.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/cras_write.html">cras_write</a></span><span class="op">(</span><span class="va">cras_table</span>, <span class="va">textfile</span>, markdown <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>If you open the text file, you will find this:</p>
-<p><strong>Friedrich Ratzel:</strong> Conceptualization, Methodology,
-Formal Analysis, Resources, Data curation <strong>Pau Vidal de la
-Blache:</strong> Methodology, Software, Validation, Resources, Data
-curation, Writing - original draft, Writing - review &amp; editing,
-Supervision, Funding acquisition <strong>Élisée Reclus:</strong>
-Methodology, Writing - original draft</p>
+<p><strong>Friedrich Ratzel:</strong> Methodology, Software, Validation,
+Investigation, Data curation, Writing - review &amp; editing,
+Visualization, Funding acquisition <strong>Pau Vidal de la
+Blache:</strong> Methodology, Software, Formal Analysis, Investigation,
+Writing - original draft, Writing - review &amp; editing, Project
+administration <strong>Élisée Reclus:</strong> Methodology, Software</p>
 <p>Moreover, if you are writing your paper in RMarkdown or quarto, you
 can insert the CRediT author statement directly in the text using an
 inline chunk
 <code>`r cras_write(cras_table, file = NULL, markdown = TRUE)`</code>.</p>
+<div class="section level4">
+<h4 id="do-not-drop-authors-without-contributions">Do not drop authors without contributions<a class="anchor" aria-label="anchor" href="#do-not-drop-authors-without-contributions"></a>
+</h4>
+<p>In some cases, one or several authors did not contribute to any
+specific role. The <code>drop</code> arguments determines if they must
+be removed from the statement. If <code>drop = TRUE</code> (default),
+the authors are removed. Otherwise, they are kept without contributions
+as below.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="../reference/cras_write.html">cras_write</a></span><span class="op">(</span><span class="va">cras_got</span>, drop <span class="op">=</span> <span class="cn">FALSE</span>, markdown <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p><strong>Danaerys Targaryen:</strong> Free slaves, Kill white walkers,
+Ride dragons <strong>Kingslayer</strong> <strong>John Snow:</strong>
+Free slaves, Kill white walkers, Ride dragons</p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
