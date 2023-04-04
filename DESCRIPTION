@@ -14,7 +14,8 @@ Description: CRediTas is a tiny package to generate CRediT author statements (ht
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/jospueyo/CRediTas
+URL: https://github.com/jospueyo/CRediTas,
+    https://jospueyo.github.io/CRediTas/
 BugReports: https://github.com/jospueyo/CRediTas/issues
 RoxygenNote: 7.2.3
 Suggests: 
