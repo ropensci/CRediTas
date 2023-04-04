@@ -77,10 +77,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          1 |             1 |           0 |                      1 |                   0 |
-| Pau Vidal de la Blache |                 0 |           1 |        1 |          0 |               0 |             1 |         0 |             0 |                        0 |                          1 |             0 |           1 |                      1 |                   0 |
+| Friedrich Ratzel       |                 1 |           1 |        1 |          1 |               0 |             1 |         0 |             0 |                        0 |                          1 |             0 |           1 |                      0 |                   0 |
+| Pau Vidal de la Blache |                 1 |           0 |        0 |          1 |               0 |             0 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      0 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 1 |           1 |        1 |          1 |               0 |             0 |         0 |             1 |                        1 |                          0 |             1 |           0 |                      0 |                   1 |
+| Élisée Reclus          |                 1 |           0 |        1 |          1 |               0 |             1 |         1 |             0 |                        0 |                          0 |             0 |           1 |                      1 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -94,9 +94,21 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Investigation, Writing - review & editing,
-Visualization, Project administration **Pau Vidal de la Blache:**
-Methodology, Software, Investigation, Writing - review & editing,
-Supervision, Project administration **Élisée Reclus:**
-Conceptualization, Methodology, Software, Validation, Data curation,
-Writing - original draft, Visualization, Funding acquisition
+**Friedrich Ratzel:** Conceptualization, Methodology, Software,
+Validation, Investigation, Writing - review & editing, Supervision **Pau
+Vidal de la Blache:** Conceptualization, Validation, Resources,
+Writing - review & editing **Élisée Reclus:** Conceptualization,
+Software, Validation, Investigation, Resources, Supervision, Project
+administration, Funding acquisition
+
+## Related packages
+
+- [tenzing](https://github.com/marton-balazs-kovacs/tenzing/): Tenzing,
+  an easy-to-use web-based app, allows researchers to generate reports
+  about the contribution of each team member on a project using CRediT,
+  for insertion into their manuscripts and for publishers to potentially
+  incorporate into article metadata.
+- [contribution](https://github.com/openbiox/contribution): The goal of
+  contribution is to generate contribution table for credit assignment
+  in a project. This is inspired by Nick Steinmetz (see twitter
+  <https://twitter.com/SteinmetzNeuro/status/1147241138291527681>).
