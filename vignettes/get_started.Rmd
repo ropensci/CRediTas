@@ -42,7 +42,15 @@ knitr::kable(cras_table)
 
 ```
 
-As you can see, the table is empty. So you must provide the information of who did what. To do this, you can also write the template as a csv file and then populate it in your preferred csv editor.
+As you can see, the table is empty. So you must provide the information of who did what. To do this, you can use the `fix` function to edit directly in R:
+
+```{r fix, eval=FALSE}
+
+fix(cras_table)
+
+```
+
+<!-- Alternatively, you can write the template as a csv file and then populate it in your preferred csv editor. -->
 
 ```{r write_csv, eval=FALSE}
 

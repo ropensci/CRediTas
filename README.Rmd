@@ -47,7 +47,15 @@ cras_table <- template_create(authors = c("Friedrich Ratzel",
 knitr::kable(cras_table)
 
 ```
-As you can see, the table is empty. So you must provide the information of who did what. If you wrote the template to a file, then you can read it back to R as follows:
+As you can see, the table is empty. So you must provide the information of who did what. You can use the `fix` function to fill the template directly in R:
+
+```{r fix, eval=FALSE}
+
+fix(cras_table)
+
+```
+
+If you wrote the template to a file, then you can read it back to R as follows:
 
 ```{r template_read, eval=FALSE}
 

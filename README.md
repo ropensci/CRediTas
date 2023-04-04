@@ -59,8 +59,15 @@ knitr::kable(cras_table)
 | Élisée Reclus          |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
 
 As you can see, the table is empty. So you must provide the information
-of who did what. If you wrote the template to a file, then you can read
-it back to R as follows:
+of who did what. You can use the `fix` function to fill the template
+directly in R:
+
+``` r
+fix(cras_table)
+```
+
+If you wrote the template to a file, then you can read it back to R as
+follows:
 
 ``` r
 cras_table <- template_read(path_to_your_csv_file)
@@ -70,10 +77,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        1 |          1 |               0 |             0 |         0 |             1 |                        1 |                          1 |             1 |           0 |                      0 |                   1 |
-| Pau Vidal de la Blache |                 0 |           0 |        1 |          1 |               0 |             0 |         0 |             0 |                        0 |                          0 |             1 |           0 |                      0 |                   1 |
+| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          1 |             1 |           0 |                      1 |                   0 |
+| Pau Vidal de la Blache |                 0 |           1 |        1 |          0 |               0 |             1 |         0 |             0 |                        0 |                          1 |             0 |           1 |                      1 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           0 |        0 |          0 |               1 |             0 |         1 |             0 |                        1 |                          0 |             0 |           1 |                      1 |                   1 |
+| Élisée Reclus          |                 1 |           1 |        1 |          1 |               0 |             0 |         0 |             1 |                        1 |                          0 |             1 |           0 |                      0 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -87,9 +94,9 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Software, Validation, Data curation, Writing -
-original draft, Writing - review & editing, Visualization, Funding
-acquisition **Pau Vidal de la Blache:** Software, Validation,
-Visualization, Funding acquisition **Élisée Reclus:** Formal Analysis,
-Resources, Writing - original draft, Supervision, Project
-administration, Funding acquisition
+**Friedrich Ratzel:** Investigation, Writing - review & editing,
+Visualization, Project administration **Pau Vidal de la Blache:**
+Methodology, Software, Investigation, Writing - review & editing,
+Supervision, Project administration **Élisée Reclus:**
+Conceptualization, Methodology, Software, Validation, Data curation,
+Writing - original draft, Visualization, Funding acquisition
