@@ -4,7 +4,7 @@
 #' (from \code{template_create}) to a raw string following the CRediT authors
 #' statement format of "author1: contributions author2: contributions ..."
 #' @param cras_table A data.frame created using \code{create_template()}
-#' @param file The text file to be created. If NULL (default), the statement is
+#' @param file The text file to be created. If not provided (default), the statement is
 #' returned as a string instead of written to a file.
 #' @param drop_authors If TRUE (default) the authors without contributions are
 #' removed from the statement. If FALSE, they are kept without contributions
@@ -38,7 +38,7 @@
 
 
 cras_write <- function(cras_table,
-                       file = NULL,
+                       file,
                        drop_authors = TRUE,
                        overwrite = FALSE,
                        markdown = TRUE,
@@ -75,7 +75,7 @@ cras_write <- function(cras_table,
 
   cras <- gsub(" $", "", cras)
 
-  if(is.null(file)){
+  if(missing(file)){
     return(cras)
   }
 

@@ -6,7 +6,7 @@
 \usage{
 cras_write(
   cras_table,
-  file = NULL,
+  file,
   drop_authors = TRUE,
   overwrite = FALSE,
   markdown = TRUE,
@@ -16,7 +16,7 @@ cras_write(
 \arguments{
 \item{cras_table}{A data.frame created using \code{create_template()}}
 
-\item{file}{The text file to be created. If NULL (default), the statement is
+\item{file}{The text file to be created. If not provided (default), the statement is
 returned as a string instead of written to a file.}
 
 \item{drop_authors}{If TRUE (default) the authors without contributions are
