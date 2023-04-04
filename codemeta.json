@@ -7,7 +7,7 @@
   "codeRepository": "https://github.com/jospueyo/CRediTas",
   "issueTracker": "https://github.com/jospueyo/CRediTas/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0",
+  "version": "0.1.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -74,5 +74,5 @@
   "softwareRequirements": {
     "SystemRequirements": null
   },
-  "fileSize": "20.418KB"
+  "fileSize": "22.429KB"
 }

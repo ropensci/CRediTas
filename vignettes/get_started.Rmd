@@ -28,14 +28,14 @@ You can install the development version of CRediTas from [GitHub](https://github
 remotes::install_github("jospueyo/CRediTas")
 ```
 
-## Example
+## Create a template
 
 The workflow is meant to work with three basic functions. First, we create a template table. It can be created as a `data.frame` and being populated in R. 
 
 ```{r create_template}
 library(CRediTas)
 
-cras_table <- create_template(authors = c("Friedrich Ratzel", 
+cras_table <- template_create(authors = c("Friedrich Ratzel", 
                                           "Pau Vidal de la Blache", 
                                           "Élisée Reclus"))
 knitr::kable(cras_table)
@@ -46,7 +46,7 @@ As you can see, the table is empty. So you must provide the information of who d
 
 ```{r write_csv, eval=FALSE}
 
-create_template(authors = c("Friedrich Ratzel", 
+template_create(authors = c("Friedrich Ratzel", 
                                           "Pau Vidal de la Blache", 
                                           "Élisée Reclus"),
                             file = path_to_your_csv_file)
@@ -57,19 +57,27 @@ Additionally, you can also define the roles to be included in the template. If `
 
 ```{r define_roles}
 
-create_template(authors = c("Danaerys Targaryen", "John Snow"),
-                roles = c("Free slaves", "Kill white walkers", "Ride dragons")) |> 
-                  knitr::kable()
+cras_got <- template_create(authors = c("Danaerys Targaryen", "Kingslayer", "John Snow"),
+                roles = c("Free slaves", "Kill white walkers", "Ride dragons"))
+
+# add contribution roles
+cras_got[-2, -1] <- 1
+
+knitr::kable(cras_got)
 
 ```
+
+## Read a template
 
 If you wrote the template to a file, then you can read it back to R as follows:
 
-```{r read_template, eval=FALSE}
+```{r template_read, eval=FALSE}
 
-cras_table <- read_template(path_to_your_csv_file)
+cras_table <- template_read(path_to_your_csv_file)
 
 ```
+
+## Generate the CRediT author statement
 
 Once the `cras_table` is populated, for instance:
 
@@ -87,7 +95,7 @@ A text file can be generated following the CRediT author statement format.
 
 textfile <- tempfile()
 
-write_cras(cras_table, textfile, markdown = TRUE)
+cras_write(cras_table, textfile, markdown = TRUE)
 
 ```
 
@@ -95,5 +103,18 @@ If you open the text file, you will find this:
 
 `r readLines(textfile)`
 
-Moreover, if you are writing your paper in RMarkdown or quarto, you can insert the CRediT author statement directly in the text using an inline chunk ``markdown `r write_cras(cras_table, file = NULL, markdown = TRUE)` ``. 
+Moreover, if you are writing your paper in RMarkdown or quarto, you can insert the CRediT author statement directly in the text using an inline chunk `` `r
+cras_write(cras_table, file = NULL, markdown = TRUE)` ``. 
+
+### Do not drop authors without contributions
+
+In some cases, one or several authors did not contribute to any specific role. The `drop` arguments determines if they must be removed from the statement. If `drop = TRUE` (default), the authors are removed. Otherwise, they are kept without contributions as below.
+
+```{r, eval = FALSE}
+
+cras_write(cras_got, drop = FALSE, markdown = TRUE)
+
+```
+`r cras_write(cras_got, drop = FALSE, markdown = TRUE)`
+
 
