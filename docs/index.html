@@ -202,8 +202,11 @@
 </tr>
 </tbody>
 </table>
-<p>As you can see, the table is empty. So you must provide the information of who did what. If you wrote the template to a file, then you can read it back to R as follows:</p>
+<p>As you can see, the table is empty. So you must provide the information of who did what. You can use the <code>fix</code> function to fill the template directly in R:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/fix.html" class="external-link">fix</a></span><span class="op">(</span><span class="va">cras_table</span><span class="op">)</span></span></code></pre></div>
+<p>If you wrote the template to a file, then you can read it back to R as follows:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cras_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/template_read.html">template_read</a></span><span class="op">(</span><span class="va">path_to_your_csv_file</span><span class="op">)</span></span></code></pre></div>
 <p>Once the <code>cras_table</code> is populated, for instance:</p>
 <table class="table">
@@ -244,37 +247,37 @@
 <tbody>
 <tr class="odd">
 <td align="left">Friedrich Ratzel</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">Pau Vidal de la Blache</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">Pau Vila</td>
@@ -295,15 +298,15 @@
 </tr>
 <tr class="even">
 <td align="left">Élisée Reclus</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">1</td>
+<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
@@ -313,12 +316,22 @@
 </tbody>
 </table>
 <p>A text file can be generated following the CRediT author statement format. Since <code>drop = TRUE</code> by default, the authors without contribution are removed from the statement, Pau Vila in this case.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">textfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/cras_write.html">cras_write</a></span><span class="op">(</span><span class="va">cras_table</span>, <span class="va">textfile</span>, markdown <span class="op">=</span> <span class="cn">TRUE</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>If you open the text file, you will find this:</p>
-<p><strong>Friedrich Ratzel:</strong> Software, Validation, Data curation, Writing - original draft, Writing - review &amp; editing, Visualization, Funding acquisition <strong>Pau Vidal de la Blache:</strong> Software, Validation, Visualization, Funding acquisition <strong>Élisée Reclus:</strong> Formal Analysis, Resources, Writing - original draft, Supervision, Project administration, Funding acquisition</p>
+<p><strong>Friedrich Ratzel:</strong> Conceptualization, Methodology, Software, Validation, Investigation, Writing - review &amp; editing, Supervision <strong>Pau Vidal de la Blache:</strong> Conceptualization, Validation, Resources, Writing - review &amp; editing <strong>Élisée Reclus:</strong> Conceptualization, Software, Validation, Investigation, Resources, Supervision, Project administration, Funding acquisition</p>
+</div>
+<div class="section level2">
+<h2 id="related-packages">Related packages<a class="anchor" aria-label="anchor" href="#related-packages"></a>
+</h2>
+<ul>
+<li>
+<a href="https://github.com/marton-balazs-kovacs/tenzing/" class="external-link">tenzing</a>: Tenzing, an easy-to-use web-based app, allows researchers to generate reports about the contribution of each team member on a project using CRediT, for insertion into their manuscripts and for publishers to potentially incorporate into article metadata.</li>
+<li>
+<a href="https://github.com/openbiox/contribution" class="external-link">contribution</a>: The goal of contribution is to generate contribution table for credit assignment in a project. This is inspired by Nick Steinmetz (see twitter <a href="https://twitter.com/SteinmetzNeuro/status/1147241138291527681" class="external-link uri">https://twitter.com/SteinmetzNeuro/status/1147241138291527681</a>).</li>
+</ul>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
