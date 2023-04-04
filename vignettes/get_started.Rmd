@@ -50,7 +50,7 @@ fix(cras_table)
 
 ```
 
-<!-- Alternatively, you can write the template as a csv file and then populate it in your preferred csv editor. -->
+Alternatively, you can write the template as a csv file and then populate it in your preferred csv editor.
 
 ```{r write_csv, eval=FALSE}
 
