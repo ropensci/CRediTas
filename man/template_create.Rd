@@ -4,7 +4,7 @@
 \alias{template_create}
 \title{Create a template to fill the CRediT author statement.}
 \usage{
-template_create(authors, roles = NULL, file = NULL)
+template_create(authors, roles = roles_get(), file = NULL)
 }
 \arguments{
 \item{authors}{A character vector with all the authors to be included in the

@@ -20,18 +20,16 @@
 #' @export
 
 
-template_create <- function(authors, roles = NULL, file = NULL){
-
-  if (is.null(roles)){
-    roles <- roles_get()
-  }
-
-  n_authors <- length(authors)
+template_create <- function(authors, roles = roles_get(), file = NULL){
 
   df <- data.frame(Authors = authors)
-  for (role in roles){
-    df[role] <- 0
-  }
+
+  mat <- matrix(0, nrow = length(authors), ncol = length(roles))
+
+  colnames(mat) <- roles
+
+  df <- cbind(df, mat)
+
   if (is.null(file)) return(df)
 
   write.csv2(df, file, row.names = FALSE)
