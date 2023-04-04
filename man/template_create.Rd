@@ -2,9 +2,7 @@
 % Please edit documentation in R/template_create.R
 \name{template_create}
 \alias{template_create}
-\title{Create a template to fill the CRediT author statement.
-(\url{https://credit.niso.org}). The template is a table where the authors
-are the rows and the columns are the roles.}
+\title{Create a template to fill the CRediT author statement.}
 \usage{
 template_create(authors, roles = NULL, file = NULL)
 }

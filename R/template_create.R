@@ -1,4 +1,5 @@
 #' Create a template to fill the CRediT author statement.
+#' @description Create a template to fill the CRediT author statement.
 #' (\url{https://credit.niso.org}). The template is a table where the authors
 #' are the rows and the columns are the roles.
 #' @param authors A character vector with all the authors to be included in the
