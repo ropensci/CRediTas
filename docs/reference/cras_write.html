@@ -65,7 +65,7 @@ statement format of "author1: contributions author2: contributions ..."</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cras_write</span><span class="op">(</span></span>
 <span>  <span class="va">cras_table</span>,</span>
-<span>  file <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">file</span>,</span>
 <span>  drop_authors <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  markdown <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -80,7 +80,7 @@ statement format of "author1: contributions author2: contributions ..."</p>
 
 
 <dt>file</dt>
-<dd><p>The text file to be created. If NULL (default), the statement is
+<dd><p>The text file to be created. If not provided (default), the statement is
 returned as a string instead of written to a file.</p></dd>
 
 
@@ -133,7 +133,7 @@ used in a Rmarkdown or quarto document using inline code:
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Check the content of the file</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "**Josep Maria:** Methodology, Software, Validation, Formal Analysis, Investigation, Resources, Visualization, Supervision, Project administration, Funding acquisition **Jane Doe:** Methodology, Software, Validation, Resources, Writing - review &amp; editing, Visualization"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "**Josep Maria:** Conceptualization, Formal Analysis, Investigation, Resources, Data curation, Project administration **Jane Doe:** Validation, Formal Analysis, Investigation, Resources, Writing - original draft, Supervision, Project administration, Funding acquisition"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

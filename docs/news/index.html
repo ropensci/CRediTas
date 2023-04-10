@@ -66,11 +66,13 @@
 <code>write_cras</code> is <code>cras_write</code>
 </li>
 </ul></li>
+<li>
+<code>file</code> argument in <code>cras_write</code> and in <code>template_create</code> no longer default to <code>NULL</code>, they are not provided by default. If missing, they behave like the old <code>NULL</code> value.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="new-features-0-1-0-9000">New features<a class="anchor" aria-label="anchor" href="#new-features-0-1-0-9000"></a></h3>
 <ul><li>
-<code>cras_write</code> integrates better with literate programming such as rmarkdown and quarto. When file is NULL (new default), instead of writing a file, the function returns a string with the CRediT Author Statement. It works well with inline code in rmarkdown and quarto documents: <code>r cras_write(cras_table, markdown = TRUE)</code> (<a href="https://github.com/jospueyo/CRediTas/issues/2" class="external-link">#2</a>)</li>
+<code>cras_write</code> integrates better with literate programming such as rmarkdown and quarto. When file is NULL (new default), instead of writing a file, the function returns a string with the CRediT Author Statement. It works well with inline code in rmarkdown and quarto documents: <code>r cras_write(cras_table, markdown = TRUE)</code> (<a href="https://github.com/jospueyo/CRediTas/issues/2" class="external-link">#2</a></li>
 <li>
 <code>cras_write</code> includes a new argument <code>drop_authors</code>, if set to <code>FALSE</code>, the authors without contributions are not removed from the statement. (<a href="https://github.com/jospueyo/CRediTas/issues/6" class="external-link">#6</a>)</li>
 </ul></div>
@@ -81,6 +83,13 @@
 <li>Improvements on the documentation of all functions (<a href="https://github.com/jospueyo/CRediTas/issues/6" class="external-link">#6</a>)</li>
 <li>In <code>cras_write</code>, the default of <code>markdown</code> argument is <code>TRUE</code>.</li>
 <li>Added some checks to <code>template_read</code> to ensure that the format is correct. (<a href="https://github.com/jospueyo/CRediTas/issues/6" class="external-link">#6</a>)</li>
+<li>Added reviewers of ROpenScience to <code>DESCRIPTION</code>.</li>
+<li>CSS fixed in pkgdown.</li>
+<li>Description added to <code>template_create</code> documentation.</li>
+<li>Option to use <code><a href="https://rdrr.io/r/utils/fix.html" class="external-link">fix()</a></code> to edit the template is added to <code>README</code> and <code>get_started</code> vignette.</li>
+<li>Related packages added to <code>README</code>.</li>
+<li>
+<code>template_create</code> is more performant thanks to using <code>matrix</code> instead of <code>data.frame</code> to create the empty contributions.</li>
 </ul></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
