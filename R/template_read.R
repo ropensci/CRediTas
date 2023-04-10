@@ -16,6 +16,8 @@
 
 template_read <- function(file){
 
+  file <- normalizePath(file)
+
   cras_table <- read.csv2(file, check.names = FALSE)
 
   if(!("Authors" %in% names(cras_table)))

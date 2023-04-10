@@ -4,17 +4,17 @@
 \alias{template_create}
 \title{Create a template to fill the CRediT author statement.}
 \usage{
-template_create(authors, roles = roles_get(), file = NULL)
+template_create(authors, file, roles = roles_get())
 }
 \arguments{
 \item{authors}{A character vector with all the authors to be included in the
 statement.}
 
+\item{file}{If a path is provided, the template is saved as a csv for excel}
+
 \item{roles}{A character vector with the roles to be included in the
 statement. If NULL, it uses all the roles defined in the CRediT author
 statement.}
-
-\item{file}{If a path is provided, the template is saved as a csv for excel}
 }
 \value{
 A dataframe with a row for each author and a column for each role,

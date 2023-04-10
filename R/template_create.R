@@ -4,10 +4,10 @@
 #' are the rows and the columns are the roles.
 #' @param authors A character vector with all the authors to be included in the
 #' statement.
+#' @param file If a path is provided, the template is saved as a csv for excel
 #' @param roles A character vector with the roles to be included in the
 #' statement. If NULL, it uses all the roles defined in the CRediT author
 #' statement.
-#' @param file If a path is provided, the template is saved as a csv for excel
 #' @returns A dataframe with a row for each author and a column for each role,
 #' filled with zeros.
 #' @details The dataframe can be edited in R or, if file is provided, it is
@@ -20,7 +20,7 @@
 #' @export
 
 
-template_create <- function(authors, roles = roles_get(), file = NULL){
+template_create <- function(authors, file, roles = roles_get()){
 
   df <- data.frame(Authors = authors)
 
@@ -30,10 +30,10 @@ template_create <- function(authors, roles = roles_get(), file = NULL){
 
   df <- cbind(df, mat)
 
-  if (is.null(file)) return(df)
+  if (missing(file)) return(df)
 
   write.csv2(df, file, row.names = FALSE)
-  invisible()
+  invisible(df)
 }
 
 

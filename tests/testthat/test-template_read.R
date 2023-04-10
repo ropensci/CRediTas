@@ -1,4 +1,4 @@
-file <- tempfile()
+file <- tempfile(fileext = ".csv")
 template_create(authors = c("A", "B"), file = file)
 
 roles <- roles_get()
@@ -49,3 +49,4 @@ write.csv2(cras_prov, file)
 test_that("warning if roles are not numeric", {
   expect_warning(template_read(file))
 })
+

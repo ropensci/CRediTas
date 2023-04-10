@@ -79,7 +79,7 @@ cras_write <- function(cras_table,
     return(cras)
   }
 
-  if(!is.character(file)) stop("file must be NULL or a string")
+  if(!is.character(file)) stop("file must be a string or not provided")
   if(length(file) > 1) stop("file cannot be a vector of length > 1")
 
   if(file.exists(file) && isFALSE(overwrite)) stop("The file already exists")
