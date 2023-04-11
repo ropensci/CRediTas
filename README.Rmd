@@ -24,11 +24,10 @@ The goal of CRediTas is to facilitate the tedious job of creating [CRediT author
 
 ## Installation
 
-You can install the development version of CRediTas from [GitHub](https://github.com/) with:
+You can install the development version of CRediTas from [r-universe](https://r-universe.dev) with:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ropensci/CRediTas")
+install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
 ```
 
 ## Example

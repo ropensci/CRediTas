@@ -24,8 +24,7 @@ The goal of CRediTas is to facilitate the tedious job of creating [CRediT author
 You can install the development version of CRediTas from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ropensci/CRediTas")
+install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
 ```
 
 ## Create a template

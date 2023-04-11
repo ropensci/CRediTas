@@ -25,11 +25,10 @@ a table (csv) and then converting this table to CRediT statement format.
 ## Installation
 
 You can install the development version of CRediTas from
-[GitHub](https://github.com/) with:
+[r-universe](https://r-universe.dev) with:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ropensci/CRediTas")
+install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
 ```
 
 ## Example
@@ -77,10 +76,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        0 |          1 |               1 |             0 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      1 |                   1 |
-| Pau Vidal de la Blache |                 1 |           1 |        1 |          0 |               0 |             1 |         1 |             1 |                        1 |                          0 |             1 |           1 |                      1 |                   0 |
+| Friedrich Ratzel       |                 0 |           1 |        0 |          1 |               0 |             1 |         0 |             1 |                        0 |                          0 |             0 |           1 |                      0 |                   1 |
+| Pau Vidal de la Blache |                 1 |           0 |        0 |          1 |               0 |             0 |         1 |             1 |                        1 |                          1 |             1 |           0 |                      1 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 1 |           1 |        0 |          1 |               1 |             1 |         1 |             0 |                        1 |                          1 |             0 |           0 |                      1 |                   0 |
+| Élisée Reclus          |                 0 |           0 |        0 |          1 |               1 |             0 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      0 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -94,14 +93,12 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Validation, Formal Analysis, Writing - original
-draft, Supervision, Project administration, Funding acquisition **Pau
-Vidal de la Blache:** Conceptualization, Methodology, Software,
-Investigation, Resources, Data curation, Writing - original draft,
-Visualization, Supervision, Project administration **Élisée Reclus:**
-Conceptualization, Methodology, Validation, Formal Analysis,
-Investigation, Resources, Writing - original draft, Writing - review &
-editing, Project administration
+**Friedrich Ratzel:** Methodology, Validation, Investigation, Data
+curation, Supervision, Funding acquisition **Pau Vidal de la Blache:**
+Conceptualization, Validation, Resources, Data curation, Writing -
+original draft, Writing - review & editing, Visualization, Project
+administration **Élisée Reclus:** Validation, Formal Analysis,
+Resources, Writing - review & editing, Funding acquisition
 
 ## Related packages
 
