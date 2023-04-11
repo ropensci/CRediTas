@@ -4,8 +4,8 @@
   "identifier": "CRediTas",
   "description": "CRediTas is a tiny package to generate CRediT author statements (https://credit.niso.org/). It provides three functions: create a template, read it back and generate the CRediT author statement in a text file.",
   "name": "CRediTas: Generate CRediT Author Statements",
-  "codeRepository": "https://github.com/jospueyo/CRediTas",
-  "issueTracker": "https://github.com/jospueyo/CRediTas/issues",
+  "codeRepository": "https://github.com/ropensci/CRediTas",
+  "issueTracker": "https://github.com/ropensci/CRediTas/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.1.0.9000",
   "programmingLanguage": {

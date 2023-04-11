@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml)
 [![Status at rOpenSci Software Peer
 Review](https://badges.ropensci.org/576_status.svg)](https://github.com/ropensci/software-review/issues/576)
 <!-- badges: end -->
@@ -29,7 +29,7 @@ You can install the development version of CRediTas from
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("jospueyo/CRediTas")
+remotes::install_github("ropensci/CRediTas")
 ```
 
 ## Example
@@ -77,10 +77,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 1 |           1 |        1 |          1 |               0 |             1 |         0 |             0 |                        0 |                          1 |             0 |           1 |                      0 |                   0 |
-| Pau Vidal de la Blache |                 1 |           0 |        0 |          1 |               0 |             0 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      0 |                   0 |
+| Friedrich Ratzel       |                 0 |           0 |        0 |          1 |               1 |             0 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      1 |                   1 |
+| Pau Vidal de la Blache |                 1 |           1 |        1 |          0 |               0 |             1 |         1 |             1 |                        1 |                          0 |             1 |           1 |                      1 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 1 |           0 |        1 |          1 |               0 |             1 |         1 |             0 |                        0 |                          0 |             0 |           1 |                      1 |                   1 |
+| Élisée Reclus          |                 1 |           1 |        0 |          1 |               1 |             1 |         1 |             0 |                        1 |                          1 |             0 |           0 |                      1 |                   0 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -94,12 +94,14 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Conceptualization, Methodology, Software,
-Validation, Investigation, Writing - review & editing, Supervision **Pau
-Vidal de la Blache:** Conceptualization, Validation, Resources,
-Writing - review & editing **Élisée Reclus:** Conceptualization,
-Software, Validation, Investigation, Resources, Supervision, Project
-administration, Funding acquisition
+**Friedrich Ratzel:** Validation, Formal Analysis, Writing - original
+draft, Supervision, Project administration, Funding acquisition **Pau
+Vidal de la Blache:** Conceptualization, Methodology, Software,
+Investigation, Resources, Data curation, Writing - original draft,
+Visualization, Supervision, Project administration **Élisée Reclus:**
+Conceptualization, Methodology, Validation, Formal Analysis,
+Investigation, Resources, Writing - original draft, Writing - review &
+editing, Project administration
 
 ## Related packages
 

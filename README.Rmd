@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # CRediTas
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jospueyo/CRediTas/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml)
 [![Status at rOpenSci Software Peer Review](https://badges.ropensci.org/576_status.svg)](https://github.com/ropensci/software-review/issues/576)
 <!-- badges: end -->
 
@@ -28,7 +28,7 @@ You can install the development version of CRediTas from [GitHub](https://github
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("jospueyo/CRediTas")
+remotes::install_github("ropensci/CRediTas")
 ```
 
 ## Example

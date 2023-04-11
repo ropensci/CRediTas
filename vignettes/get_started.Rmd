@@ -25,7 +25,7 @@ You can install the development version of CRediTas from [GitHub](https://github
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("jospueyo/CRediTas")
+remotes::install_github("ropensci/CRediTas")
 ```
 
 ## Create a template
