@@ -111,7 +111,7 @@ If you open the text file, you will find this:
 `r readLines(textfile)`
 
 Moreover, if you are writing your paper in RMarkdown or quarto, you can insert the CRediT author statement directly in the text using an inline chunk `` `r
-cras_write(cras_table, file = NULL, markdown = TRUE)` ``. 
+cras_write(cras_table, markdown = TRUE)` ``. 
 
 ### Do not drop authors without contributions
 
