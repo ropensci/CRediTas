@@ -10,6 +10,7 @@ In this version I have:
 
 * Fixed the URLs
 * Used `urlchecker::url_check()` to validate all URLs.
+* Changed the description to not mention the package name.
 
 ## R CMD check results
 

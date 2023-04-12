@@ -9,7 +9,7 @@ Authors@R:
       person(given = "Marcelo S.", family = "Perlin", role = "rev", comment = c(github = "@msperlin")),
       person(given = "João", family = "Martins", role = "rev", comment = c(github = "@zambujo"))
       )
-Description: CRediTas is a tiny package to generate CRediT author statements (<https://credit.niso.org/>). 
+Description: A tiny package to generate CRediT author statements (<https://credit.niso.org/>). 
     It provides three functions: create a template, read it back and generate the CRediT author statement in a text file.
 License: MIT + file LICENSE
 Encoding: UTF-8
