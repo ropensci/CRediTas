@@ -21,10 +21,16 @@ The goal of CRediTas is to facilitate the tedious job of creating [CRediT author
 
 ## Installation
 
-You can install the development version of CRediTas from [r-universe](https://r-universe.dev) with:
+You can install the development version of CRediTas from [r-universe](https://r-universe.dev/) with:
 
 ``` r
 install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
+```
+
+Or you can install de long term release version from [CRAN](https://cran.r-project.org/web/packages/CRediTas/index.html) as usual:
+
+``` r
+install.packages("CRediTas")
 ```
 
 ## Create a template
