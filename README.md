@@ -85,10 +85,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 1 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   0 |
-| Pau Vidal de la Blache |                 1 |           0 |        0 |          0 |               1 |             0 |         0 |             1 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
+| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           0 |                      1 |                   1 |
+| Pau Vidal de la Blache |                 1 |           0 |        1 |          1 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   1 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           0 |        0 |          1 |               0 |             0 |         1 |             0 |                        1 |                          1 |             0 |           0 |                      1 |                   0 |
+| Élisée Reclus          |                 0 |           0 |        1 |          1 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   0 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -102,11 +102,11 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Conceptualization, Investigation, Visualization,
-Supervision, Project administration **Pau Vidal de la Blache:**
-Conceptualization, Formal Analysis, Data curation **Élisée Reclus:**
-Validation, Resources, Writing - original draft, Writing - review &
-editing, Project administration
+**Friedrich Ratzel:** Investigation, Visualization, Project
+administration, Funding acquisition **Pau Vidal de la Blache:**
+Conceptualization, Software, Validation, Funding acquisition **Élisée
+Reclus:** Software, Validation, Investigation, Visualization,
+Supervision, Project administration
 
 ## Related packages
 
@@ -119,3 +119,25 @@ editing, Project administration
   contribution is to generate contribution table for credit assignment
   in a project. This is inspired by Nick Steinmetz (see twitter
   <https://twitter.com/SteinmetzNeuro/status/1147241138291527681>).
+
+## Citation
+
+``` r
+citation("CRediTas")
+```
+
+    ## 
+    ## To cite CRediTas in publications use:
+    ## 
+    ##   Pueyo-Ros, J. CRediTas. A tiny package to generate CRediT author
+    ##   statements. doi: 10.5281/zenodo.7845945
+    ##   [https://docs.ropensci.org/CRediTas]
+    ## 
+    ## A BibTeX entry for LaTeX users is
+    ## 
+    ##   @Manual{,
+    ##     title = {CRediTas. A tiny package to generate CRediT author statements},
+    ##     author = {Josep Pueyo-Ros},
+    ##     doi = {10.5281/zenodo.7845945},
+    ##     url = {https://docs.ropensci.org/CRediTas},
+    ##   }
