@@ -1,0 +1,13 @@
+citHeader("To cite CRediTas in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "CRediTas. A tiny package to generate CRediT author statements",
+  author   = "Josep Pueyo-Ros",
+  doi      = "10.5281/zenodo.7845945",
+  url      = "https://docs.ropensci.org/CRediTas",
+  textVersion = "
+  Pueyo-Ros, J. CRediTas. A tiny package to generate CRediT author statements. doi: 10.5281/zenodo.7845945
+  [https://docs.ropensci.org/CRediTas]
+  "
+)

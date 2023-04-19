@@ -8,6 +8,7 @@
 [![R-CMD-check](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ropensci/CRediTas/actions/workflows/R-CMD-check.yaml)
 [![Status at rOpenSci Software Peer
 Review](https://badges.ropensci.org/576_status.svg)](https://github.com/ropensci/software-review/issues/576)
+[![DOI](https://zenodo.org/badge/605528165.svg)](https://zenodo.org/badge/latestdoi/605528165)
 <!-- badges: end -->
 
 The goal of CRediTas is to facilitate the tedious job of creating
@@ -84,10 +85,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 1 |           1 |        1 |          0 |               1 |             1 |         1 |             0 |                        0 |                          1 |             0 |           0 |                      1 |                   0 |
-| Pau Vidal de la Blache |                 0 |           0 |        1 |          0 |               1 |             1 |         1 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   1 |
+| Friedrich Ratzel       |                 1 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   0 |
+| Pau Vidal de la Blache |                 1 |           0 |        0 |          0 |               1 |             0 |         0 |             1 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           1 |        0 |          0 |               0 |             0 |         1 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   1 |
+| Élisée Reclus          |                 0 |           0 |        0 |          1 |               0 |             0 |         1 |             0 |                        1 |                          1 |             0 |           0 |                      1 |                   0 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -101,12 +102,11 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Conceptualization, Methodology, Software, Formal
-Analysis, Investigation, Resources, Writing - review & editing, Project
-administration **Pau Vidal de la Blache:** Software, Formal Analysis,
-Investigation, Resources, Funding acquisition **Élisée Reclus:**
-Methodology, Resources, Visualization, Supervision, Project
-administration, Funding acquisition
+**Friedrich Ratzel:** Conceptualization, Investigation, Visualization,
+Supervision, Project administration **Pau Vidal de la Blache:**
+Conceptualization, Formal Analysis, Data curation **Élisée Reclus:**
+Validation, Resources, Writing - original draft, Writing - review &
+editing, Project administration
 
 ## Related packages
 
