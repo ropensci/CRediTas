@@ -9,6 +9,8 @@
 [![Status at rOpenSci Software Peer
 Review](https://badges.ropensci.org/576_status.svg)](https://github.com/ropensci/software-review/issues/576)
 [![DOI](https://zenodo.org/badge/605528165.svg)](https://zenodo.org/badge/latestdoi/605528165)
+[![Total CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/CRediTas?color=blue)](https://cranlogs.r-pkg.org/#badges)
 <!-- badges: end -->
 
 The goal of CRediTas is to facilitate the tedious job of creating
@@ -85,10 +87,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           0 |                      1 |                   1 |
-| Pau Vidal de la Blache |                 1 |           0 |        1 |          1 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   1 |
+| Friedrich Ratzel       |                 1 |           0 |        0 |          1 |               0 |             0 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      1 |                   0 |
+| Pau Vidal de la Blache |                 1 |           0 |        1 |          1 |               1 |             0 |         0 |             0 |                        1 |                          0 |             0 |           0 |                      1 |                   0 |
 | Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           0 |        1 |          1 |               0 |             1 |         0 |             0 |                        0 |                          0 |             1 |           1 |                      1 |                   0 |
+| Élisée Reclus          |                 1 |           0 |        0 |          0 |               1 |             1 |         0 |             0 |                        1 |                          1 |             0 |           1 |                      0 |                   1 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -102,11 +104,12 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Investigation, Visualization, Project
-administration, Funding acquisition **Pau Vidal de la Blache:**
-Conceptualization, Software, Validation, Funding acquisition **Élisée
-Reclus:** Software, Validation, Investigation, Visualization,
-Supervision, Project administration
+**Friedrich Ratzel:** Conceptualization, Validation, Writing - original
+draft, Supervision, Project administration **Pau Vidal de la Blache:**
+Conceptualization, Software, Validation, Formal Analysis, Writing -
+original draft, Project administration **Élisée Reclus:**
+Conceptualization, Formal Analysis, Investigation, Writing - original
+draft, Writing - review & editing, Supervision, Funding acquisition
 
 ## Related packages
 
@@ -126,7 +129,6 @@ Supervision, Project administration
 citation("CRediTas")
 ```
 
-    ## 
     ## To cite CRediTas in publications use:
     ## 
     ##   Pueyo-Ros, J. CRediTas. A tiny package to generate CRediT author
