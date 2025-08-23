@@ -64,7 +64,7 @@ cras_write <- function(cras_table,
       }
     }
 
-    cras <- gsub(", $", " ", cras)
+    cras <- gsub(", $", "", cras)
 
     # add period after each author block
     cras <- paste0(cras, ". ")
