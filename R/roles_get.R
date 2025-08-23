@@ -7,7 +7,7 @@ roles_get <- function() {
     "Methodology",
     "Software",
     "Validation",
-    "Formal Analysis",
+    "Formal analysis",
     "Investigation",
     "Resources",
     "Data curation",
