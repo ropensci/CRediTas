@@ -1,4 +1,9 @@
-# CRediTas (development version)
+# CRediTas 0.3.0
+
+## Minor improvements
+
+- Add a period after each author contribution to improve clarity.
+- Small correction to roles get to align with NISO taxonomy.
 
 # CRediTas 0.2.0
 

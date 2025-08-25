@@ -61,12 +61,12 @@ cras_table <- template_create(authors = c("Friedrich Ratzel",
 knitr::kable(cras_table)
 ```
 
-| Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
-|:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Pau Vidal de la Blache |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
+| Authors | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Friedrich Ratzel | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Pau Vidal de la Blache | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Pau Vila | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Élisée Reclus | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 As you can see, the table is empty. So you must provide the information
 of who did what. You can use the `fix` function to fill the template
@@ -85,12 +85,12 @@ cras_table <- template_read(path_to_your_csv_file)
 
 Once the `cras_table` is populated, for instance:
 
-| Authors                | Conceptualization | Methodology | Software | Validation | Formal Analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
-|:-----------------------|------------------:|------------:|---------:|-----------:|----------------:|--------------:|----------:|--------------:|-------------------------:|---------------------------:|--------------:|------------:|-----------------------:|--------------------:|
-| Friedrich Ratzel       |                 1 |           0 |        0 |          1 |               0 |             0 |         0 |             0 |                        1 |                          0 |             0 |           1 |                      1 |                   0 |
-| Pau Vidal de la Blache |                 1 |           0 |        1 |          1 |               1 |             0 |         0 |             0 |                        1 |                          0 |             0 |           0 |                      1 |                   0 |
-| Pau Vila               |                 0 |           0 |        0 |          0 |               0 |             0 |         0 |             0 |                        0 |                          0 |             0 |           0 |                      0 |                   0 |
-| Élisée Reclus          |                 1 |           0 |        0 |          0 |               1 |             1 |         0 |             0 |                        1 |                          1 |             0 |           1 |                      0 |                   1 |
+| Authors | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Friedrich Ratzel | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| Pau Vidal de la Blache | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
+| Pau Vila | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Élisée Reclus | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -104,12 +104,12 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Conceptualization, Validation, Writing - original
-draft, Supervision, Project administration **Pau Vidal de la Blache:**
-Conceptualization, Software, Validation, Formal Analysis, Writing -
-original draft, Project administration **Élisée Reclus:**
-Conceptualization, Formal Analysis, Investigation, Writing - original
-draft, Writing - review & editing, Supervision, Funding acquisition
+**Friedrich Ratzel:** Conceptualization, Methodology, Software,
+Resources, Project administration. **Pau Vidal de la Blache:**
+Conceptualization, Software, Data curation, Visualization, Supervision,
+Project administration, Funding acquisition. **Élisée Reclus:**
+Methodology, Formal analysis, Resources, Supervision, Funding
+acquisition.
 
 ## Related packages
 
