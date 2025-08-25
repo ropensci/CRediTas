@@ -35,8 +35,7 @@ install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
 ```
 
 Or you can install de long term release version from
-[CRAN](https://cran.r-project.org/web/packages/CRediTas/index.html) as
-usual:
+[CRAN](https://CRAN.R-project.org/package=CRediTas) as usual:
 
 ``` r
 install.packages("CRediTas")
@@ -87,10 +86,10 @@ Once the `cras_table` is populated, for instance:
 
 | Authors | Conceptualization | Methodology | Software | Validation | Formal analysis | Investigation | Resources | Data curation | Writing - original draft | Writing - review & editing | Visualization | Supervision | Project administration | Funding acquisition |
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Friedrich Ratzel | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| Pau Vidal de la Blache | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
+| Friedrich Ratzel | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+| Pau Vidal de la Blache | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 |
 | Pau Vila | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Élisée Reclus | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
+| Élisée Reclus | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
 
 A text file can be generated following the CRediT author statement
 format. Since `drop = TRUE` by default, the authors without contribution
@@ -104,12 +103,13 @@ cras_write(cras_table, textfile, markdown = TRUE, quiet = TRUE)
 
 If you open the text file, you will find this:
 
-**Friedrich Ratzel:** Conceptualization, Methodology, Software,
-Resources, Project administration. **Pau Vidal de la Blache:**
-Conceptualization, Software, Data curation, Visualization, Supervision,
-Project administration, Funding acquisition. **Élisée Reclus:**
-Methodology, Formal analysis, Resources, Supervision, Funding
-acquisition.
+**Friedrich Ratzel:** Investigation, Resources, Data curation, Writing -
+original draft, Writing - review & editing, Supervision, Project
+administration, Funding acquisition. **Pau Vidal de la Blache:** Formal
+analysis, Investigation, Resources, Data curation, Supervision, Project
+administration. **Élisée Reclus:** Conceptualization, Methodology,
+Validation, Data curation, Writing - review & editing, Project
+administration.
 
 ## Related packages
 
@@ -129,17 +129,19 @@ acquisition.
 citation("CRediTas")
 ```
 
-    ## To cite CRediTas in publications use:
+    ## To cite package 'CRediTas' in publications use:
     ## 
-    ##   Pueyo-Ros, J. CRediTas. A tiny package to generate CRediT author
-    ##   statements. doi: 10.5281/zenodo.7845945
-    ##   [https://docs.ropensci.org/CRediTas]
+    ##   Pueyo-Ros J (2023). _CRediTas. A tiny package to generate CRediT
+    ##   author statements_. doi:10.5281/zenodo.7845945
+    ##   <https://doi.org/10.5281/zenodo.7845945>,
+    ##   <https://docs.ropensci.org/CRediTas/>.
     ## 
     ## A BibTeX entry for LaTeX users is
     ## 
     ##   @Manual{,
     ##     title = {CRediTas. A tiny package to generate CRediT author statements},
     ##     author = {Josep Pueyo-Ros},
+    ##     year = {2023},
+    ##     url = {https://docs.ropensci.org/CRediTas/},
     ##     doi = {10.5281/zenodo.7845945},
-    ##     url = {https://docs.ropensci.org/CRediTas},
     ##   }

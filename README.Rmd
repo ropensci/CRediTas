@@ -32,7 +32,7 @@ You can install the development version of CRediTas from [r-universe](https://r-
 install.packages("CRediTas", repos = "https://ropensci.r-universe.dev")
 ```
 
-Or you can install de long term release version from [CRAN](https://cran.r-project.org/web/packages/CRediTas/index.html) as usual:
+Or you can install de long term release version from [CRAN](https://CRAN.R-project.org/package=CRediTas) as usual:
 
 ``` r
 install.packages("CRediTas")
