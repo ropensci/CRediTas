@@ -14,9 +14,8 @@ Description: A tiny package to generate CRediT author statements (<https://credi
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/ropensci/CRediTas/,
-    https://docs.ropensci.org/CRediTas/
-BugReports: https://github.com/ropensci/CRediTas/issues/
+URL: https://github.com/ropensci/CRediTas/, https://docs.ropensci.org/CRediTas/, https://github.com/ropensci/CRediTas
+BugReports: https://github.com/ropensci/CRediTas/issues
 RoxygenNote: 7.2.3
 Suggests: 
     knitr,
