@@ -6,10 +6,10 @@ cras_table$`Writing - original draft` <- c(1,0,0,0)
 cras_table$`Writing - review & editing` <- c(0,1,0,1)
 cras_table$`Funding acquisition` <- c(0,0,0,1)
 
-cras <- paste0("ABC: ", roles_get()[[1]], ", ", roles_get()[[9]], " ",
-               "DEF: ", roles_get()[[2]], ", ", roles_get()[[10]], " ",
+cras <- paste0("ABC: ", roles_get()[[1]], ", ", roles_get()[[9]], ". ",
+               "DEF: ", roles_get()[[2]], ", ", roles_get()[[10]], ". ",
                "KLM: ", roles_get()[[2]], ", ", roles_get()[[7]], ", ",
-               roles_get()[[10]], ", ", roles_get()[[14]]
+               roles_get()[[10]], ", ", roles_get()[[14]], "."
 )
 
 test_that("cras_write works as expected in raw text", {

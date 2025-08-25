@@ -2,7 +2,7 @@
 #' @description
 #' The function transforms the information in the template
 #' (from \code{template_create}) to a raw string following the CRediT authors
-#' statement format of "author1: contributions author2: contributions ..."
+#' statement format of "author1: contributions. author2: contributions ..."
 #' @param cras_table A data.frame created using \code{create_template()}
 #' @param file The text file to be created. If not provided (default), the statement is
 #' returned as a string instead of written to a file.
@@ -21,7 +21,7 @@
 #' used in a Rmarkdown or quarto document using inline code:
 #' \code{`r cras_write(cras_table, markdown = TRUE)`}
 #' @examples
-#' # Generate a template and populate it (randomwly for this example)
+#' # Generate a template and populate it (randomly for this example)
 #' cras_table <- template_create(authors = c("Josep Maria", "Jane Doe"))
 #' cras_table[,2:ncol(cras_table)] <- sample(0:1, (ncol(cras_table)-1)*2,
 #'                                           replace = TRUE)
@@ -35,8 +35,6 @@
 #' # Check the content of the file
 #' readLines(file)
 #' @export
-
-
 cras_write <- function(cras_table,
                        file,
                        drop_authors = TRUE,
@@ -44,45 +42,44 @@ cras_write <- function(cras_table,
                        markdown = TRUE,
                        quiet = FALSE){
 
-  if(drop_authors)
+  if (drop_authors)
     cras_table <- drop_authors(cras_table, quiet = quiet)
 
   cras <- character()
 
   for (i in seq_len(nrow(cras_table))){
 
-    if (markdown) cras <- paste0(cras,"**")
+    if (markdown) cras <- paste0(cras, "**")
     cras <- paste0(cras, cras_table$Authors[[i]])
     if (rowSums(cras_table[i, -1]) > 0){
       cras <- paste0(cras, ":")
-    }# else if (i < nrow(cras_table)) {
-    #   cras <- paste0(cras, " ")
-    # }
+    }
 
-    if (markdown) cras <- paste0(cras,"**")
+    if (markdown) cras <- paste0(cras, "**")
     cras <- paste0(cras, " ")
 
-
     for (j in 2:ncol(cras_table)){
-
-      if(cras_table[i,j, drop=T] > 0) {
-      cras <- paste0(cras, names(cras_table)[[j]], ", ")
+      if (cras_table[i, j, drop = TRUE] > 0) {
+        cras <- paste0(cras, names(cras_table)[[j]], ", ")
       }
     }
 
-    cras <- gsub(", $", " ", cras)
+    cras <- gsub(", $", "", cras)
+
+    # add period after each author block
+    cras <- paste0(cras, ". ")
   }
 
   cras <- gsub(" $", "", cras)
 
-  if(missing(file)){
+  if (missing(file)){
     return(cras)
   }
 
-  if(!is.character(file)) stop("file must be a string or not provided")
-  if(length(file) > 1) stop("file cannot be a vector of length > 1")
+  if (!is.character(file)) stop("file must be a string or not provided")
+  if (length(file) > 1) stop("file cannot be a vector of length > 1")
 
-  if(file.exists(file) && isFALSE(overwrite)) stop("The file already exists")
+  if (file.exists(file) && isFALSE(overwrite)) stop("The file already exists")
 
   writeLines(cras, file)
   invisible(cras)
