@@ -1,3 +1,5 @@
+# CRediTas (development version)
+
 # CRediTas 0.3.0
 
 ## Minor improvements
